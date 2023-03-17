@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<rdf:RDF 
+<rdf:RDF
          xml:base="https://www.geonames.org/ontology"
          xmlns:skos="http://www.w3.org/2004/02/skos/core#"
          xmlns:foaf="http://xmlns.com/foaf/0.1/"
@@ -16,7 +16,7 @@
          xmlns:adms="http://www.w3.org/ns/adms#"
 		 xmlns:spatial="http://geovocab.org/spatial#">
 
-<!-- Ontology Information -->  
+<!-- Ontology Information -->
       <owl:Ontology rdf:about="https://www.geonames.org/ontology">
       <dcterms:title xml:lang="en">The Geonames ontology</dcterms:title>
       <dcterms:description xml:lang="en">The Geonames ontologies provides elements of description for geographical features, in particular those defined in the geonames.org data base</dcterms:description>
@@ -84,19 +84,19 @@
                     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
                     <owl:onProperty rdf:resource="#name"/>
               </owl:Restriction>
-        </rdfs:subClassOf>      
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
               <owl:Restriction>
                     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
                     <owl:onProperty rdf:resource="#lat"/>
               </owl:Restriction>
-        </rdfs:subClassOf>   
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
               <owl:Restriction>
                     <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
                     <owl:onProperty rdf:resource="#long"/>
               </owl:Restriction>
-        </rdfs:subClassOf>    
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
               <owl:Restriction>
                     <owl:onProperty rdf:resource="#featureClass"/>
@@ -142,13 +142,13 @@
         </rdfs:subClassOf>
 
   </owl:Class>
-      
+
 <owl:Class rdf:about="#Feature">
       <rdfs:comment xml:lang="en">A geographical feature</rdfs:comment>
       <skos:historyNote xml:lang="en">Modified in version 3.1 : The cardinality constraints on feature code, feature class are relaxed on this class, and put on the specific subclass Geonames Feature. This class and attached properties can therefore be used for features not necessarily identified in the Geoanmes data base</skos:historyNote>
       <rdfs:label xml:lang="en">Feature</rdfs:label>
       <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
-      <owl:equivalentClass rdf:resource="http://geovocab.org/spatial#Feature"/>  
+      <owl:equivalentClass rdf:resource="http://geovocab.org/spatial#Feature"/>
 	  <rdfs:seeAlso rdf:resource="http://schema.org/Place"/>
 </owl:Class>
 
@@ -180,7 +180,7 @@
     <rdfs:label xml:lang="en">colloquial name</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="#alternateName"/>
   </owl:DatatypeProperty>
-      
+
       <owl:DatatypeProperty rdf:about="#geonamesID">
             <rdfs:label xml:lang="en">geonames identifier</rdfs:label>
             <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/identifier"/>
@@ -198,14 +198,14 @@
     <rdfs:label xml:lang="en">historical name</rdfs:label>
     <rdfs:subPropertyOf rdf:resource="#alternateName"/>
   </owl:DatatypeProperty>
-  
+
   <owl:DatatypeProperty rdf:about="#lat">
     <rdfs:label>latitude</rdfs:label>
     <rdfs:comment>latitude of a feature (decimal degrees)</rdfs:comment>
 	<rdfs:domain rdf:resource="#Feature"/>
 	<rdfs:seeAlso rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
   </owl:DatatypeProperty>
-  
+
   <owl:DatatypeProperty rdf:about="#long">
     <rdfs:label>longitude</rdfs:label>
     <rdfs:comment>longitude of a feature (decimal degrees)</rdfs:comment>
@@ -8310,56 +8310,56 @@
     <skos:prefLabel xml:lang="ru">виноградники</skos:prefLabel>
     <skos:prefLabel xml:lang="bg">лозя</skos:prefLabel>
   </gn:Code>
-      
+
       <gn:Code rdf:about="#A.ADM1H"
             skos:notation="A.ADM1H">
             <skos:historyNote xml:lang="en">Added in v3.1</skos:historyNote>
             <skos:inScheme rdf:resource="#A"/>
             <skos:prefLabel xml:lang="en">historical first-order administrative division</skos:prefLabel>
       </gn:Code>
-      
+
       <gn:Code rdf:about="#A.ADM2H"
             skos:notation="A.ADM2H">
             <skos:historyNote xml:lang="en">Added in v3.1</skos:historyNote>
             <skos:inScheme rdf:resource="#A"/>
             <skos:prefLabel xml:lang="en">historical second-order administrative division</skos:prefLabel>
       </gn:Code>
-      
+
       <gn:Code rdf:about="#A.ADM3H"
             skos:notation="A.ADM3H">
             <skos:historyNote xml:lang="en">Added in v3.1</skos:historyNote>
             <skos:inScheme rdf:resource="#A"/>
             <skos:prefLabel xml:lang="en">historical third-order administrative division</skos:prefLabel>
       </gn:Code>
-      
+
       <gn:Code rdf:about="#A.ADM4H"
             skos:notation="A.ADM4H">
             <skos:historyNote xml:lang="en">Added in v3.1</skos:historyNote>
             <skos:inScheme rdf:resource="#A"/>
             <skos:prefLabel xml:lang="en">historical fourth-order administrative division</skos:prefLabel>
       </gn:Code>
-      
+
       <gn:Code rdf:about="#A.ADMH"
             skos:notation="A.ADMH">
             <skos:historyNote xml:lang="en">Added in v3.1</skos:historyNote>
             <skos:inScheme rdf:resource="#A"/>
             <skos:prefLabel xml:lang="en">historical administrative division</skos:prefLabel>
       </gn:Code>
-      
+
       <gn:Code rdf:about="#A.PCLH"
             skos:notation="A.PCLH">
             <skos:historyNote xml:lang="en">Added in v3.1</skos:historyNote>
             <skos:inScheme rdf:resource="#A"/>
             <skos:prefLabel xml:lang="en">historical political entity</skos:prefLabel>
       </gn:Code>
-      
+
       <gn:Code rdf:about="#P.PPCLH"
             skos:notation="P.PPCLH">
             <skos:historyNote xml:lang="en">Added in v3.1</skos:historyNote>
             <skos:inScheme rdf:resource="#P"/>
             <skos:prefLabel xml:lang="en">historical capital of a political entity</skos:prefLabel>
       </gn:Code>
-      
+
       <gn:Code rdf:about="#P.PPLH"
             skos:notation="P.PPLH">
             <skos:historyNote xml:lang="en">Added in v3.1</skos:historyNote>

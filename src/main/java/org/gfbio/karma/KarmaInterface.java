@@ -35,14 +35,15 @@ public class KarmaInterface implements Runnable {
 
   private String acronym, table, type;
 
-  public KarmaInterface() {}
+  public KarmaInterface() {
+  }
 
   /**
    * Maps (semi-)structured data to semantic triples using Karma
-   * 
+   *
    * @param acronym Terminology acronym (e.g. ITIS)
-   * @param table Terminology table to map (e.g. vernaculars)
-   * @param type Type of files which contain data to map (e.g. .json)
+   * @param table   Terminology table to map (e.g. vernaculars)
+   * @param type    Type of files which contain data to map (e.g. .json)
    */
   public KarmaInterface(String acronym, String table, String type) {
     this.acronym = acronym;
@@ -77,7 +78,7 @@ public class KarmaInterface implements Runnable {
   }
 
   /**
-   * 
+   *
    * @param onto
    * @param tableName
    * @param type
@@ -96,7 +97,8 @@ public class KarmaInterface implements Runnable {
     // return properties.getWorkDir() + "/out/" + tableName + "-triples-out.ttl";
     // }
     // if (!checkForModel(onto, tableName, properties.getModelDir())) {
-    // throw new FileNotFoundException("Model for table " + tableName + " could not be found!");
+    // throw new FileNotFoundException("Model for table " + tableName + " could not
+    // be found!");
     // }
 
     List<String> ttlFilenames = new ArrayList<String>();
@@ -107,8 +109,8 @@ public class KarmaInterface implements Runnable {
 
         jsonFileNames = new ArrayList<String>();
 
-        DirectoryStream<Path> directoryStream =
-            Files.newDirectoryStream(Paths.get(properties.getWorkDir() + this.acronym));
+        DirectoryStream<Path> directoryStream = Files
+            .newDirectoryStream(Paths.get(properties.getWorkDir() + this.acronym));
 
         for (Path path : directoryStream) {
           // path : absolute path to file
@@ -162,7 +164,6 @@ public class KarmaInterface implements Runnable {
                     .append("out/").append(this.table).append("-triples-out.ttl");
               }
 
-
             } else
               continue;
 
@@ -210,7 +211,7 @@ public class KarmaInterface implements Runnable {
   }
 
   /**
-   * 
+   *
    * @param tableName
    * @param onto
    * @param fromJSON
@@ -222,7 +223,8 @@ public class KarmaInterface implements Runnable {
     List<String> command = new ArrayList<String>();
 
     command.add("java");
-    // Specifies a list of directories, JAR files, and ZIP archives to search for class files
+    // Specifies a list of directories, JAR files, and ZIP archives to search for
+    // class files
     command.add("-cp");
     command.add(properties.getModelDir() + KARMA_SHADED_JAR);
     command.add(KARMA_RDF_GENERATOR);
@@ -255,7 +257,7 @@ public class KarmaInterface implements Runnable {
   }
 
   /**
-   * 
+   *
    * @param onto
    * @param graph
    * @param csv
@@ -267,7 +269,8 @@ public class KarmaInterface implements Runnable {
     List<String> command = new ArrayList<String>();
 
     command.add("java");
-    // Specifies a list of directories, JAR files, and ZIP archives to search for class files
+    // Specifies a list of directories, JAR files, and ZIP archives to search for
+    // class files
     command.add("-cp");
     command.add(properties.getKarmaHome() + KARMA_SHADED_JAR);
     command.add(KARMA_RDF_GENERATOR);
@@ -300,7 +303,7 @@ public class KarmaInterface implements Runnable {
   }
 
   /**
-   * 
+   *
    * @param onto
    * @param tableName
    * @return
@@ -313,7 +316,8 @@ public class KarmaInterface implements Runnable {
     List<String> command = new ArrayList<String>();
 
     command.add("java");
-    // Specifies a list of directories, JAR files, and ZIP archives to search for class files
+    // Specifies a list of directories, JAR files, and ZIP archives to search for
+    // class files
     command.add("-cp");
     command.add(properties.getKarmaHome() + "/" + KARMA_SHADED_JAR);
     command.add(KARMA_RDF_GENERATOR);

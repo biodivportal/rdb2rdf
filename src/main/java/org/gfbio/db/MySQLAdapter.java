@@ -127,7 +127,6 @@ public class MySQLAdapter {
         e1.printStackTrace();
       }
 
-
       throw new RuntimeException();
     }
   }

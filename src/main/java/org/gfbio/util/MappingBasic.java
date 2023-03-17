@@ -1,8 +1,6 @@
 package org.gfbio.util;
 
-
 import java.util.List;
-
 
 public class MappingBasic {
 
@@ -10,7 +8,8 @@ public class MappingBasic {
 
   private List<MappingResource> resources;
 
-  public MappingBasic() {}
+  public MappingBasic() {
+  }
 
   public MappingBasic(String baseInstanceUri, List<MappingResource> resources) {
     this.baseInstanceUri = baseInstanceUri;
@@ -32,7 +31,6 @@ public class MappingBasic {
   public void setResources(List<MappingResource> resources) {
     this.resources = resources;
   }
-
 
   public MappingResource getResource(String modelName) {
     MappingResource resource = new MappingResource();

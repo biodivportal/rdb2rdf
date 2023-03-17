@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package org.gfbio.util;
 
@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Properties;
 import com.google.gson.Gson;
 
-
 /**
- * Access database properties saved in a file and make them accessible via getter
+ * Access database properties saved in a file and make them accessible via
+ * getter
  *
  */
 public class AppProperties {

@@ -20,7 +20,7 @@ def iterate_adm_levels(df):
     '''
         Parameters:
         df -- DataFrame Geonames CSV (loaded as DataFrame)
-    
+
     '''
     print(' iterating ADM levels ')
 
@@ -37,7 +37,7 @@ def iterate_adm_levels(df):
 
 def set_correct_parent_id(df):
     '''
-    
+
     '''
     def lowest_adm_feature(row):
         if pd.isnull(row['adm4_feature']) == False:
@@ -46,18 +46,18 @@ def set_correct_parent_id(df):
             return row['adm3_feature']
         elif pd.isnull(row['adm2_feature']) == False:
             return row['adm2_feature']
-        else: 
+        else:
             return row['adm1_feature']
-    
+
     print(' setting parent ids ')
     df['parent'] = df.apply(lambda row: lowest_adm_feature(row), axis=1)
 
 
 def read_dataframe(csv_file_path):
     '''
-    
+
     '''
-    
+
     print(' read in CSV {} '.format(csv_file_path))
 
     df = pd.read_csv(csv_file_path, delimiter='|', encoding='UTF-8', low_memory=False)
@@ -79,14 +79,14 @@ if __name__ == "__main__":
         Main function. Converts a Geonames xx.CSV into a xx_MOD.csv, which contains compiled hierarchy data ('admx_feature')
 
     '''
-    try: 
+    try:
         import time
         import pandas as pd
         import numpy as np
     except ModuleNotFoundError as error:
         print(" module pandas not found ")
         sys.exit(-1)
-        
+
     path_to_csv = sys.argv[1]
     language_code = sys.argv[2]
     work_dir = sys.argv[3]

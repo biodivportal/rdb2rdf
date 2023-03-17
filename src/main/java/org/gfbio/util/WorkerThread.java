@@ -55,9 +55,8 @@ public class WorkerThread extends Thread {
 
         for (short i = 1; i <= batches; i++) {
 
-          StringBuilder filename =
-              new StringBuilder().append(props.getWorkDir()).append(acronym).append(File.separator)
-                  .append(resource.getTable()).append("-part-" + i + "-").append(".json");
+          StringBuilder filename = new StringBuilder().append(props.getWorkDir()).append(acronym).append(File.separator)
+              .append(resource.getTable()).append("-part-" + i + "-").append(".json");
 
           set = mysqlIf.select(resource.getTable(), acronym, String.valueOf(offset));
 

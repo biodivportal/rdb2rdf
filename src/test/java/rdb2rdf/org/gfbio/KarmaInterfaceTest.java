@@ -27,8 +27,7 @@ public class KarmaInterfaceTest {
   @Test
   @Ignore
   public void testMappingConfigParser() throws IOException {
-    String json =
-        new String(Files.readAllBytes(Paths.get("./src/test/resources/mappingConfig.json")));
+    String json = new String(Files.readAllBytes(Paths.get("./src/test/resources/mappingConfig.json")));
 
     assertEquals(7, MappingParser.getKeys(json, "tables").size());
     assertEquals(2, MappingParser.getKeys(json, "vernaculars").size());

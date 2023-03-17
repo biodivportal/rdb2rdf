@@ -1,12 +1,11 @@
 # Use root/example as user/password credentials
-version: '3.1'
+version: "3.1"
 
 services:
-
   db:
     build: .
     command: --default-authentication-plugin=mysql_native_password
     ports:
-        - "3306:3306"
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: example

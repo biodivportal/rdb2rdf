@@ -1,9 +1,9 @@
-CREATE 
-    ALGORITHM = UNDEFINED 
-    DEFINER = `root`@`%` 
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`%`
     SQL SECURITY DEFINER
 VIEW `rank_to_taxa` AS
-    SELECT 
+    SELECT
         `taxonomic_units`.`tsn` AS `tsn`,
         `taxon_unit_types`.`rank_name` AS `rank_name`
     FROM

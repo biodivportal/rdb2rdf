@@ -10,7 +10,8 @@ public class MappingResource {
 
   private boolean exportAsTTL;
 
-  public MappingResource() {}
+  public MappingResource() {
+  }
 
   public String getModelName() {
     return modelName;

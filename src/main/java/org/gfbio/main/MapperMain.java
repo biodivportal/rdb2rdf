@@ -101,7 +101,6 @@ public class MapperMain {
         terminate((short) -1);
       }
 
-
     } catch (ParseException e) {
 
       LOGGER.error("Parsing failed.  Reason: " + e.getMessage());
@@ -110,7 +109,6 @@ public class MapperMain {
 
       terminate((short) -1);
     }
-
 
   }
 

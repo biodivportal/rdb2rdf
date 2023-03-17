@@ -1,5 +1,5 @@
 CREATE VIEW `author_to_taxa` AS
-	SELECT 
+	SELECT
 		taxonomic_units.tsn AS `tsn`,
 		strippedauthor.shortauthor AS `author_label`
 	FROM

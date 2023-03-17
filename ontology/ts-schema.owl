@@ -11,10 +11,10 @@
     <owl:Ontology rdf:about="http://terminologies.gfbio.org/terms/ts-schema">
         <dc:title>The GFBio Terminology Server Schema vocabulary</dc:title>
     </owl:Ontology>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -22,13 +22,13 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://purl.org/dc/elements/1.1/title -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/label -->
@@ -41,10 +41,10 @@
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
     </owl:AnnotationProperty>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Datatypes
@@ -52,16 +52,16 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://www.w3.org/2000/01/rdf-schema#Class -->
 
     <rdfs:Datatype rdf:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    
 
 
-    <!-- 
+
+    <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Data properties
@@ -69,7 +69,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/abbreviations -->
@@ -81,7 +81,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>abbreviations</rdfs:label>
     </owl:DatatypeProperty>
-    
+
     <!-- http://terminologies.gfbio.org/terms/ts-schema/type -->
 
     <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/type">
@@ -101,7 +101,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>acronym</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/broaderlabel -->
@@ -113,7 +113,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>broaderlabel</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/broaderuri -->
@@ -125,7 +125,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>broaderuri</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/commonNames -->
@@ -137,7 +137,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>commonNames</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/description -->
@@ -149,7 +149,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>description</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/definition -->
 
@@ -171,7 +171,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>embeddedDatabase</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/externalID -->
@@ -183,7 +183,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>externalID</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/hierarchy -->
@@ -195,7 +195,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>hierarchy</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/kingdom -->
@@ -207,7 +207,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>kingdom</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/name -->
@@ -219,7 +219,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>name</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/narrowerlabel -->
@@ -231,7 +231,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>narrowerlabel</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/narroweruri -->
@@ -243,7 +243,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>narroweruri</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/rank -->
@@ -266,7 +266,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>author</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/sourceTerminology -->
 
@@ -277,7 +277,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>sourceTerminology</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/status -->
@@ -289,7 +289,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>status</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/symbols -->
@@ -301,7 +301,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>symbols</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/synonym -->
@@ -313,7 +313,7 @@
         <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
         <rdfs:label>synonym</rdfs:label>
     </owl:DatatypeProperty>
-    
+
 
 
     <!-- http://terminologies.gfbio.org/terms/ts-schema/uri -->

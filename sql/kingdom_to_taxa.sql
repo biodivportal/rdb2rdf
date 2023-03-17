@@ -1,9 +1,9 @@
-CREATE 
-    ALGORITHM = UNDEFINED 
-    DEFINER = `root`@`%` 
+CREATE
+    ALGORITHM = UNDEFINED
+    DEFINER = `root`@`%`
     SQL SECURITY DEFINER
 VIEW `kingdom_to_taxa` AS
-    SELECT 
+    SELECT
         `taxonomic_units`.`tsn` AS `tsn`,
         `kingdoms`.`kingdom_name` AS `kingdom_name`
     FROM

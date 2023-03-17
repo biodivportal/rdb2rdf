@@ -1,40 +1,40 @@
 {
-	"baseInstanceUri": "http://terminologies.gfbio.org/terms/",
-	"resources": [
-		{
-			"modelName": "features",
-			"table": "features",
-			"modelFile": "geonames-model",
-			"exportAsTTL": true
-		}
-	],
-	"tables": [
-		{
-			"features": "Feature"
-		}
-	],
-	"features": [
-		{
-			"geonameid": "int",
-			"name": "String",
-			"asciiname": "String",
-			"alternatenames": "String",
-			"latitude": "float",
-			"longitude": "float",
-			"feature_class": "String",
-			"feature_code": "String",
-			"country_code": "String",
-			"admin1_code": "float",
-			"admin2_code": "float",
-			"admin3_code": "float",
-			"admin4_code": "float",
-			"population": "int",
-			"modification_date": "String",
-			"parent": "float",
-			"adm4_feature": "float",
-			"adm3_feature": "float",
-			"adm2_feature": "float",
-			"adm1_feature": "float"
-		}
-	]
+  "baseInstanceUri": "http://terminologies.gfbio.org/terms/",
+  "resources": [
+    {
+      "modelName": "features",
+      "table": "features",
+      "modelFile": "geonames-model",
+      "exportAsTTL": true
+    }
+  ],
+  "tables": [
+    {
+      "features": "Feature"
+    }
+  ],
+  "features": [
+    {
+      "geonameid": "int",
+      "name": "String",
+      "asciiname": "String",
+      "alternatenames": "String",
+      "latitude": "float",
+      "longitude": "float",
+      "feature_class": "String",
+      "feature_code": "String",
+      "country_code": "String",
+      "admin1_code": "float",
+      "admin2_code": "float",
+      "admin3_code": "float",
+      "admin4_code": "float",
+      "population": "int",
+      "modification_date": "String",
+      "parent": "float",
+      "adm4_feature": "float",
+      "adm3_feature": "float",
+      "adm2_feature": "float",
+      "adm1_feature": "float"
+    }
+  ]
 }
