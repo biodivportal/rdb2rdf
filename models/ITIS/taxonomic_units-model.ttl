@@ -1,0 +1,1374 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix gfbiots: <http://terminologies.gfbio.org/terms/ts-schema/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1ft06l8e5x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "taxonomic_units" ;
+	km-dev:modelPublicationTime "1646053204421"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"unaccept_reason\"}],[{\"columnName\":\"update_date\"}],[{\"columnName\":\"credibility_rtng\"}],[{\"columnName\":\"completeness_rtng\"}],[{\"columnName\":\"currency_rating\"}],[{\"columnName\":\"complete_name\"}],[{\"columnName\":\"initial_time_stamp\"}],[{\"columnName\":\"parent_tsn\"}],[{\"columnName\":\"name_usage\"}],[{\"columnName\":\"tsn\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"rank_uri\"}],[{\"columnName\":\"taxa_uri\"}],[{\"columnName\":\"unaccept_reason\"}],[{\"columnName\":\"update_date\"}],[{\"columnName\":\"author_uri\"}],[{\"columnName\":\"credibility_rtng\"}],[{\"columnName\":\"completeness_rtng\"}],[{\"columnName\":\"currency_rating\"}],[{\"columnName\":\"complete_name\"}],[{\"columnName\":\"url\"}],[{\"columnName\":\"initial_time_stamp\"}],[{\"columnName\":\"name_usage\"}],[{\"columnName\":\"tsn\"}],[{\"columnName\":\"parent_taxa_uri\"}],[{\"columnName\":\"kingdom_uri\"}]]" ;
+	km-dev:hasModelLabel "taxonomic_units" ;
+	km-dev:hasBaseURI "http://terminologies.gfbio.org/ITIS/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": true,
+                    \"baseURI\": \"http://terminologies.gfbio.org/ITIS/\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"tsn\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"taxa_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return 'http://terminologies.gfbio.org/ITIS/Taxa_' +  getValue(\\\"tsn\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"tsn\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"taxa_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"parent_tsn\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"parent_taxa_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return 'http://terminologies.gfbio.org/ITIS/Taxa_' +  getValue(\\\"parent_tsn\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_tsn\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_taxa_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"taxon_author_id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"author_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return 'http://terminologies.gfbio.org/ITIS/Author_' +  getValue(\\\"taxon_author_id\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"taxon_author_id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"author_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"kingdom_id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"kingdom_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return 'http://terminologies.gfbio.org/ITIS/Kingdom_' +  getValue(\\\"kingdom_id\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"kingdom_id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"kingdom_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"rank_id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"rank_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return 'http://terminologies.gfbio.org/ITIS/TaxonomicRank_' + getValue(\\\"rank_id\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"rank_id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"rank_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"tsn\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"url\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=\\\" + getValue(\\\"tsn\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"tsn\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"url\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"taxa_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://terminologies.gfbio.org/ITIS#Taxa\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://terminologies.gfbio.org/ITIS#Taxa1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"taxa_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"taxa_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"name_usage\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/ITIS#name_usage\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"name_usage\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"name_usage\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"unaccept_reason\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/ITIS#unaccept_reason\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"unaccept_reason\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"unaccept_reason\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"credibility_rtng\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/ITIS#credibility_rtng\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"credibility_rtng\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"credibility_rtng\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"completeness_rtng\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/ITIS#completeness_rating\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"completeness_rtng\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"completeness_rtng\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"currency_rating\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/ITIS#currency_rating\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"currency_rating\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"currency_rating\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"initial_time_stamp\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/ITIS#initial_time_stamp\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"initial_time_stamp\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"initial_time_stamp\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"parent_taxa_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://terminologies.gfbio.org/ITIS#Taxa\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://terminologies.gfbio.org/ITIS#Taxa2\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa2\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa2 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_taxa_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_taxa_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"update_date\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/ITIS#update_date\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"update_date\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"update_date\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"complete_name\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.w3.org/2000/01/rdf-schema#label\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"complete_name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"complete_name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"url\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/terms/ts-schema/url\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"url\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"url\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"tsn\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/ITIS#tsn\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Taxa/Taxa1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"tsn\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"tsn\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://terminologies.gfbio.org/ITIS#Taxa2\",
+                    \"edgeId\": \"http://www.w3.org/2000/01/rdf-schema#subClassOf\",
+                    \"edgeTargetUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\",
+                    \"edgeSourceId\": \"http://terminologies.gfbio.org/ITIS#Taxa1\",
+                    \"edgeSourceUri\": \"http://terminologies.gfbio.org/ITIS#Taxa\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 a rr:TriplesMap .
+
+_:node1ft06l8e5x1 km-dev:hasTriplesMap km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x2 rr:tableName "taxonomic_units" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasLogicalTable _:node1ft06l8e5x2 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:logicalTable _:node1ft06l8e5x2 ;
+	rr:subjectMap _:node1ft06l8e5x3 .
+
+_:node1ft06l8e5x1 km-dev:hasSubjectMap _:node1ft06l8e5x3 .
+
+_:node1ft06l8e5x3 km-dev:isPartOfMapping _:node1ft06l8e5x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://terminologies.gfbio.org/ITIS#Taxa1" ;
+	rr:class <http://terminologies.gfbio.org/ITIS#Taxa> ;
+	rr:template "{taxa_uri}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_174a2ab3-3b93-4f31-a771-e96af8dcd72f rr:predicate rdfs:subClassOf .
+
+km-dev:RefObjectMap_73484fad-37d8-4366-958e-7616a1b968fe a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_3c68e9f1-ad9f-476b-8df1-9683b971591c ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap km-dev:RefObjectMap_73484fad-37d8-4366-958e-7616a1b968fe .
+
+km-dev:PredicateObjectMap_174a2ab3-3b93-4f31-a771-e96af8dcd72f rr:objectMap km-dev:RefObjectMap_73484fad-37d8-4366-958e-7616a1b968fe .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_174a2ab3-3b93-4f31-a771-e96af8dcd72f .
+
+km-dev:PredicateObjectMap_174a2ab3-3b93-4f31-a771-e96af8dcd72f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_174a2ab3-3b93-4f31-a771-e96af8dcd72f .
+
+km-dev:PredicateObjectMap_a09ba0ca-e939-4e88-892f-96cca2df2bcc rr:predicate <http://terminologies.gfbio.org/ITIS#unaccept_reason> .
+
+_:node1ft06l8e5x4 rr:column "unaccept_reason" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x4 .
+
+km-dev:PredicateObjectMap_a09ba0ca-e939-4e88-892f-96cca2df2bcc rr:objectMap _:node1ft06l8e5x4 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_a09ba0ca-e939-4e88-892f-96cca2df2bcc .
+
+km-dev:PredicateObjectMap_a09ba0ca-e939-4e88-892f-96cca2df2bcc a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a09ba0ca-e939-4e88-892f-96cca2df2bcc .
+
+km-dev:PredicateObjectMap_af161ae1-4d31-4c0f-a1cc-97c9f8f38582 rr:predicate <http://terminologies.gfbio.org/ITIS#update_date> .
+
+_:node1ft06l8e5x5 rr:column "update_date" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x5 .
+
+km-dev:PredicateObjectMap_af161ae1-4d31-4c0f-a1cc-97c9f8f38582 rr:objectMap _:node1ft06l8e5x5 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_af161ae1-4d31-4c0f-a1cc-97c9f8f38582 .
+
+km-dev:PredicateObjectMap_af161ae1-4d31-4c0f-a1cc-97c9f8f38582 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_af161ae1-4d31-4c0f-a1cc-97c9f8f38582 .
+
+km-dev:PredicateObjectMap_a889bb69-5ddb-4e4d-b174-436ad5db3c6a rr:predicate <http://terminologies.gfbio.org/ITIS#credibility_rtng> .
+
+_:node1ft06l8e5x6 rr:column "credibility_rtng" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x6 .
+
+km-dev:PredicateObjectMap_a889bb69-5ddb-4e4d-b174-436ad5db3c6a rr:objectMap _:node1ft06l8e5x6 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_a889bb69-5ddb-4e4d-b174-436ad5db3c6a .
+
+km-dev:PredicateObjectMap_a889bb69-5ddb-4e4d-b174-436ad5db3c6a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a889bb69-5ddb-4e4d-b174-436ad5db3c6a .
+
+km-dev:PredicateObjectMap_596d421d-cc22-480e-a721-f88d92c8f38a rr:predicate <http://terminologies.gfbio.org/ITIS#completeness_rating> .
+
+_:node1ft06l8e5x7 rr:column "completeness_rtng" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x7 .
+
+km-dev:PredicateObjectMap_596d421d-cc22-480e-a721-f88d92c8f38a rr:objectMap _:node1ft06l8e5x7 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_596d421d-cc22-480e-a721-f88d92c8f38a .
+
+km-dev:PredicateObjectMap_596d421d-cc22-480e-a721-f88d92c8f38a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_596d421d-cc22-480e-a721-f88d92c8f38a .
+
+km-dev:PredicateObjectMap_b6081d9f-67dc-4a33-93ea-d6a6b84c9122 rr:predicate <http://terminologies.gfbio.org/ITIS#currency_rating> .
+
+_:node1ft06l8e5x8 rr:column "currency_rating" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x8 .
+
+km-dev:PredicateObjectMap_b6081d9f-67dc-4a33-93ea-d6a6b84c9122 rr:objectMap _:node1ft06l8e5x8 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_b6081d9f-67dc-4a33-93ea-d6a6b84c9122 .
+
+km-dev:PredicateObjectMap_b6081d9f-67dc-4a33-93ea-d6a6b84c9122 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b6081d9f-67dc-4a33-93ea-d6a6b84c9122 .
+
+km-dev:PredicateObjectMap_7a14ae43-8759-43a2-a660-9d6b62ae0d96 rr:predicate rdfs:label .
+
+_:node1ft06l8e5x9 rr:column "complete_name" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x9 .
+
+km-dev:PredicateObjectMap_7a14ae43-8759-43a2-a660-9d6b62ae0d96 rr:objectMap _:node1ft06l8e5x9 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_7a14ae43-8759-43a2-a660-9d6b62ae0d96 .
+
+km-dev:PredicateObjectMap_7a14ae43-8759-43a2-a660-9d6b62ae0d96 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7a14ae43-8759-43a2-a660-9d6b62ae0d96 .
+
+km-dev:PredicateObjectMap_93b55df0-4b5c-4b62-b693-494d2567c3a6 rr:predicate <http://terminologies.gfbio.org/ITIS#initial_time_stamp> .
+
+_:node1ft06l8e5x10 rr:column "initial_time_stamp" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x10 .
+
+km-dev:PredicateObjectMap_93b55df0-4b5c-4b62-b693-494d2567c3a6 rr:objectMap _:node1ft06l8e5x10 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_93b55df0-4b5c-4b62-b693-494d2567c3a6 .
+
+km-dev:PredicateObjectMap_93b55df0-4b5c-4b62-b693-494d2567c3a6 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_93b55df0-4b5c-4b62-b693-494d2567c3a6 .
+
+km-dev:PredicateObjectMap_808f8e49-69db-48a8-b5fe-0f883e5881d9 rr:predicate gfbiots:url .
+
+_:node1ft06l8e5x11 rr:constant "https://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value={tsn}" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x11 .
+
+km-dev:PredicateObjectMap_808f8e49-69db-48a8-b5fe-0f883e5881d9 rr:objectMap _:node1ft06l8e5x11 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_808f8e49-69db-48a8-b5fe-0f883e5881d9 .
+
+km-dev:PredicateObjectMap_808f8e49-69db-48a8-b5fe-0f883e5881d9 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_808f8e49-69db-48a8-b5fe-0f883e5881d9 .
+
+km-dev:PredicateObjectMap_78bcb59d-b068-40e8-83b4-87854fdf31bc rr:predicate <http://terminologies.gfbio.org/ITIS#name_usage> .
+
+_:node1ft06l8e5x12 rr:column "name_usage" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x12 .
+
+km-dev:PredicateObjectMap_78bcb59d-b068-40e8-83b4-87854fdf31bc rr:objectMap _:node1ft06l8e5x12 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_78bcb59d-b068-40e8-83b4-87854fdf31bc .
+
+km-dev:PredicateObjectMap_78bcb59d-b068-40e8-83b4-87854fdf31bc a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_78bcb59d-b068-40e8-83b4-87854fdf31bc .
+
+km-dev:PredicateObjectMap_67a6e3df-4d9e-439b-ab94-88590e5b0607 rr:predicate <http://terminologies.gfbio.org/ITIS#tsn> .
+
+_:node1ft06l8e5x13 rr:column "tsn" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasObjectMap _:node1ft06l8e5x13 .
+
+km-dev:PredicateObjectMap_67a6e3df-4d9e-439b-ab94-88590e5b0607 rr:objectMap _:node1ft06l8e5x13 .
+
+km-dev:TriplesMap_50a1f6d4-75af-4cbc-967b-566370fe93b5 rr:predicateObjectMap km-dev:PredicateObjectMap_67a6e3df-4d9e-439b-ab94-88590e5b0607 .
+
+km-dev:PredicateObjectMap_67a6e3df-4d9e-439b-ab94-88590e5b0607 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_67a6e3df-4d9e-439b-ab94-88590e5b0607 .
+
+km-dev:TriplesMap_3c68e9f1-ad9f-476b-8df1-9683b971591c a rr:TriplesMap .
+
+_:node1ft06l8e5x1 km-dev:hasTriplesMap km-dev:TriplesMap_3c68e9f1-ad9f-476b-8df1-9683b971591c .
+
+km-dev:TriplesMap_3c68e9f1-ad9f-476b-8df1-9683b971591c km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x14 rr:tableName "taxonomic_units" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1ft06l8e5x1 .
+
+_:node1ft06l8e5x1 km-dev:hasLogicalTable _:node1ft06l8e5x14 .
+
+km-dev:TriplesMap_3c68e9f1-ad9f-476b-8df1-9683b971591c rr:logicalTable _:node1ft06l8e5x14 ;
+	rr:subjectMap _:node1ft06l8e5x15 .
+
+_:node1ft06l8e5x1 km-dev:hasSubjectMap _:node1ft06l8e5x15 .
+
+_:node1ft06l8e5x15 km-dev:isPartOfMapping _:node1ft06l8e5x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://terminologies.gfbio.org/ITIS#Taxa2" ;
+	rr:class <http://terminologies.gfbio.org/ITIS#Taxa> ;
+	rr:template "{parent_taxa_uri}" .

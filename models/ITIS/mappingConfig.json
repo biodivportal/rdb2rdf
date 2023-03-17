@@ -1,0 +1,122 @@
+{
+	"baseInstanceUri": "http://terminologies.gfbio.org/terms/",
+	"resources": [
+		{
+			"modelName": "kingdom_to_taxa",
+			"table": "kingdom_to_taxa",
+			"modelFile": "kingdom_to_taxa-model",
+			"exportAsTTL": true
+		},
+		{
+			"modelName": "taxonomic_units",
+			"table": "taxonomic_units",
+			"modelFile": "taxonomic_units-model",
+			"exportAsTTL": true
+		},
+		{
+			"modelName": "synonyms_tsn_label_accepted",
+			"table": "synonyms_tsn_label_accepted",
+			"modelFile": "synonyms_tsn_label_accepted-model",
+			"exportAsTTL": true
+		},
+		{
+			"modelName": "synonyms_tsn_label",
+			"table": "synonyms_tsn_label",
+			"modelFile": "synonyms_tsn_label-model",
+			"exportAsTTL": true
+		},
+		{
+			"modelName": "author_to_taxa",
+			"table": "author_to_taxa",
+			"modelFile": "author_to_taxa-model",
+			"exportAsTTL": true
+		},
+		{
+			"modelName": "rank_to_taxa",
+			"table": "rank_to_taxa",
+			"modelFile": "rank_to_taxa-model",
+			"exportAsTTL": true
+		},
+		{
+			"modelName": "vernaculars",
+			"table": "vernaculars",
+			"modelFile": "vernaculars-model",
+			"exportAsTTL": true
+		}
+	],
+	"queries": [
+		{
+			"synonyms_tsn_label_accepted": "SELECT *",
+			"synonyms_tsn_label": "SELECT *",
+			"vernaculars": "SELECT *",
+			"taxonomic_units": "SELECT *",
+			"rank_to_taxa": "SELECT *",
+			"author_to_taxa": "SELECT *",
+			"kingdom_to_taxa": "SELECT *"
+		}
+	],
+	"tables": [
+		{
+			"kingdom_to_taxa": "",
+			"author_to_taxa": "",
+			"synonyms_tsn_label_accepted": "",
+			"synonyms_tsn_label": "",
+			"vernaculars": "",
+			"rank_to_taxa": "",
+			"taxonomic_units": "Taxa"
+		}
+	],
+	"vernaculars": [
+		{
+			"tsn": "int",
+			"vernacular_name": "String"
+		}
+	],
+	"taxonomic_units": [
+		{
+			"tsn": "int",
+			"name_usage": "String",
+			"unaccept_reason": "String",
+			"credibility_rtng": "String",
+			"completeness_rtng": "String",
+			"currency_rating": "String",
+			"initial_time_stamp": "String",
+			"parent_tsn": "int",
+			"taxon_author_id": "int",
+			"kingdom_id": "int",
+			"rank_id": "int",
+			"update_date": "String",
+			"complete_name": "String"
+		}
+	],
+	"synonyms_tsn_label_accepted": [
+		{
+			"tsn": "int",
+			"tsn_label_accepted": "String"
+		}
+	],
+	"synonyms_tsn_label": [
+		{
+			"tsn_accepted": "int",
+			"tsn_label": "String"
+		}
+	],
+	"author_to_taxa": [
+		{
+			"tsn": "int",
+			"author_label": "String"
+		}
+	],
+	"kingdom_to_taxa": [
+		{
+			"tsn": "int",
+			"kingdom_name": "String"
+		}
+	],
+	"rank_to_taxa": [
+		{
+			"tsn": "int",
+			"rank_name": "String"
+		}
+	]
+}

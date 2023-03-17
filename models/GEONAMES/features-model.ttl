@@ -1,0 +1,3014 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix gn: <http://www.geonames.org/ontology#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix OMV: <http://omv.ontoware.org/2005/05/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix spatial: <http://geovocab.org/spatial#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix mrel: <http://id.loc.gov/vocabulary/relators/> .
+@prefix gfbiots: <http://terminologies.gfbio.org/terms/ts-schema/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ontology: <http://terminologies.gfbio.org/terms/ontology/> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1f0gbkf26x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "DE_mod_final.csv" ;
+	km-dev:modelPublicationTime "1615456779334"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"adm2_feature\"}],[{\"columnName\":\"country_code\"}],[{\"columnName\":\"adm1_feature\"}],[{\"columnName\":\"alternames\"},{\"columnName\":\"Values\"}],[{\"columnName\":\"geonameid\"}],[{\"columnName\":\"name\"}],[{\"columnName\":\"asciiname\"}],[{\"columnName\":\"population\"}],[{\"columnName\":\"modification_date\"}],[{\"columnName\":\"parent\"}],[{\"columnName\":\"latitude\"}],[{\"columnName\":\"longitude\"}],[{\"columnName\":\"adm4_feature\"}],[{\"columnName\":\"feature_class\"}],[{\"columnName\":\"adm3_feature\"}],[{\"columnName\":\"feature_code\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"adm1_feature_uri\"}],[{\"columnName\":\"parent_feature_uri\"}],[{\"columnName\":\"adm3_feature_uri\"}],[{\"columnName\":\"country_code\"}],[{\"columnName\":\"alternames\"},{\"columnName\":\"Values\"}],[{\"columnName\":\"feature_uri\"}],[{\"columnName\":\"feature_class_uri\"}],[{\"columnName\":\"geonameid\"}],[{\"columnName\":\"name\"}],[{\"columnName\":\"asciiname\"}],[{\"columnName\":\"population\"}],[{\"columnName\":\"modification_date\"}],[{\"columnName\":\"latitude\"}],[{\"columnName\":\"longitude\"}],[{\"columnName\":\"adm2_feature_uri\"}],[{\"columnName\":\"adm4_feature_uri\"}],[{\"columnName\":\"feature_code\"}],[{\"columnName\":\"feature_code_uri\"}]]" ;
+	km-dev:hasModelLabel "DE_mod_final.csv" ;
+	km-dev:hasBaseURI "http://sws.geonames.org/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": true,
+                    \"baseURI\": \"http://sws.geonames.org/\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"geonameid\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"feature_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://sws.geonames.org/\\\" + getValue(\\\"geonameid\\\") + \\\"/\\\"\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"geonameid\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SplitValuesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"alternatenames\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"delimiter\",
+                \"type\": \"other\",
+                \"value\": \",\"
+            },
+            {
+                \"name\": \"newColName\",
+                \"type\": \"other\",
+                \"value\": \"alternames\"
+            },
+            {
+                \"name\": \"newHNodeId\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"parent\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"parent_feature_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://sws.geonames.org/\\\" + getValue(\\\"parent\\\") + \\\"/\\\"\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_class\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"feature_class_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://www.geonames.org/ontology#\\\" + getValue(\\\"feature_class\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_code\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"feature_code_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://www.geonames.org/ontology#\\\" + getValue(\\\"feature_class\\\") +\\\".\\\" + getValue(\\\"feature_code\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": true,
+                    \"baseURI\": \"http://sws.geonames.org/\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"geonameid\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"feature_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://sws.geonames.org/\\\" + getValue(\\\"geonameid\\\") + \\\"/\\\"\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"geonameid\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SplitValuesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"alternatenames\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"delimiter\",
+                \"type\": \"other\",
+                \"value\": \",\"
+            },
+            {
+                \"name\": \"newColName\",
+                \"type\": \"other\",
+                \"value\": \"alternames\"
+            },
+            {
+                \"name\": \"newHNodeId\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"parent\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"parent_feature_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://sws.geonames.org/\\\" + getValue(\\\"parent\\\") + \\\"/\\\"\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_class\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"feature_class_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://www.geonames.org/ontology#\\\" + getValue(\\\"feature_class\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_code\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"feature_code_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://www.geonames.org/ontology#\\\" + getValue(\\\"feature_class\\\") +\\\".\\\" + getValue(\\\"feature_code\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"adm4_feature\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"adm4_feature_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://sws.geonames.org/\\\" + getValue(\\\"adm4_feature\\\") + \\\"/\\\"\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm4_feature\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm4_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"adm3_feature\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"adm3_feature_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://sws.geonames.org/\\\" + getValue(\\\"adm3_feature\\\") + \\\"/\\\"\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm3_feature\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm3_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"adm2_feature\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"adm2_feature_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://sws.geonames.org/\\\" + getValue(\\\"adm2_feature\\\") + \\\"/\\\"\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm2_feature\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm2_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"adm1_feature\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"adm1_feature_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return \\\"http://sws.geonames.org/\\\" + getValue(\\\"adm1_feature\\\") + \\\"/\\\"\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm1_feature\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm1_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Feature1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"name\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.geonames.org/ontology#name\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"name\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"name\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"asciiname\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.w3.org/2000/01/rdf-schema#label\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"asciiname\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"asciiname\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"alternames\"},
+                    {\"columnName\": \"Values\"}
+                ]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.geonames.org/ontology#alternateName\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"alternames\\\"},{\\\"columnName\\\":\\\"Values\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"alternames\\\"},{\\\"columnName\\\":\\\"Values\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"country_code\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.geonames.org/ontology#countryCode\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"country_code\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"country_code\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"parent_feature_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature2\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature2\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Feature2 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_feature_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"modification_date\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://purl.org/dc/terms/modified\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"modification_date\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"modification_date\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"latitude\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.w3.org/2003/01/geo/wgs84_pos#lat\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"latitude\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"latitude\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"longitude\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.w3.org/2003/01/geo/wgs84_pos#long\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"longitude\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"longitude\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_class_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Class1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Class\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Class1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Class1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_code_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Code\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Code1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Code\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Code1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Code1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"population\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.geonames.org/ontology#population\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"population\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"population\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Feature1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"parent_feature_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature2\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature2\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Feature2 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_feature_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"parent_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_class_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Class\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Class1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Class\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Class1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Class1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_class_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_code_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Code\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Code1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Code\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Code1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Code1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"adm4_feature_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature3\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature3\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Feature3 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm4_feature_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm4_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"adm3_feature_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature4\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature4\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Feature4 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm3_feature_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm3_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"adm2_feature_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature5\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature5\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Feature5 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm2_feature_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm2_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"adm1_feature_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.geonames.org/ontology#Feature6\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature6\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"gn:Feature6 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm1_feature_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"adm1_feature_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"feature_code\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/terms/ts-schema/rank\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"feature_code\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"geonameid\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"DomainId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://terminologies.gfbio.org/terms/ts-schema/externalID\",
+                    \"DomainLabel\": \"gn:Feature1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"geonameid\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"geonameid\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.geonames.org/ontology#Class1\",
+                    \"edgeId\": \"http://www.geonames.org/ontology#featureClass\",
+                    \"edgeTargetUri\": \"http://www.geonames.org/ontology#Class\",
+                    \"edgeSourceId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"edgeSourceUri\": \"http://www.geonames.org/ontology#Feature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.geonames.org/ontology#Code1\",
+                    \"edgeId\": \"http://www.geonames.org/ontology#featureCode\",
+                    \"edgeTargetUri\": \"http://www.geonames.org/ontology#Code\",
+                    \"edgeSourceId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"edgeSourceUri\": \"http://www.geonames.org/ontology#Feature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.geonames.org/ontology#Feature2\",
+                    \"edgeId\": \"http://www.geonames.org/ontology#parentFeature\",
+                    \"edgeTargetUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"edgeSourceId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"edgeSourceUri\": \"http://www.geonames.org/ontology#Feature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.geonames.org/ontology#Feature3\",
+                    \"edgeId\": \"http://www.geonames.org/ontology#parentADM4\",
+                    \"edgeTargetUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"edgeSourceId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"edgeSourceUri\": \"http://www.geonames.org/ontology#Feature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.geonames.org/ontology#Feature4\",
+                    \"edgeId\": \"http://www.geonames.org/ontology#parentADM3\",
+                    \"edgeTargetUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"edgeSourceId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"edgeSourceUri\": \"http://www.geonames.org/ontology#Feature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.geonames.org/ontology#Feature5\",
+                    \"edgeId\": \"http://www.geonames.org/ontology#parentADM2\",
+                    \"edgeTargetUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"edgeSourceId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"edgeSourceUri\": \"http://www.geonames.org/ontology#Feature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"AddLinkCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"edge\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"edgeTargetId\": \"http://www.geonames.org/ontology#Feature6\",
+                    \"edgeId\": \"http://www.geonames.org/ontology#parentADM1\",
+                    \"edgeTargetUri\": \"http://www.geonames.org/ontology#Feature\",
+                    \"edgeSourceId\": \"http://www.geonames.org/ontology#Feature1\",
+                    \"edgeSourceUri\": \"http://www.geonames.org/ontology#Feature\"
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 a rr:TriplesMap .
+
+_:node1f0gbkf26x1 km-dev:hasTriplesMap km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x2 rr:tableName "DE_mod_final.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasLogicalTable _:node1f0gbkf26x2 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:logicalTable _:node1f0gbkf26x2 ;
+	rr:subjectMap _:node1f0gbkf26x3 .
+
+_:node1f0gbkf26x1 km-dev:hasSubjectMap _:node1f0gbkf26x3 .
+
+_:node1f0gbkf26x3 km-dev:isPartOfMapping _:node1f0gbkf26x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.geonames.org/ontology#Feature1" ;
+	rr:class gn:Feature ;
+	rr:template "http://sws.geonames.org/{geonameid}/" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_31683af1-6208-44eb-a2f8-af1f9f0301af rr:predicate gn:featureClass .
+
+km-dev:RefObjectMap_004d5641-2ae9-48a1-857e-d4d2037ede86 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_1ff6a234-6bc4-43e2-b0e7-098b7f353bcb ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap km-dev:RefObjectMap_004d5641-2ae9-48a1-857e-d4d2037ede86 .
+
+km-dev:PredicateObjectMap_31683af1-6208-44eb-a2f8-af1f9f0301af rr:objectMap km-dev:RefObjectMap_004d5641-2ae9-48a1-857e-d4d2037ede86 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_31683af1-6208-44eb-a2f8-af1f9f0301af .
+
+km-dev:PredicateObjectMap_31683af1-6208-44eb-a2f8-af1f9f0301af a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_31683af1-6208-44eb-a2f8-af1f9f0301af .
+
+km-dev:PredicateObjectMap_47aa1bcd-941e-4412-b509-a1f8be87c4d0 rr:predicate gn:featureCode .
+
+km-dev:RefObjectMap_09628ec2-c7a9-4e58-9db5-29f04e71e43f a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_dd669b99-65a1-445c-893c-9513657c47e7 ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap km-dev:RefObjectMap_09628ec2-c7a9-4e58-9db5-29f04e71e43f .
+
+km-dev:PredicateObjectMap_47aa1bcd-941e-4412-b509-a1f8be87c4d0 rr:objectMap km-dev:RefObjectMap_09628ec2-c7a9-4e58-9db5-29f04e71e43f .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_47aa1bcd-941e-4412-b509-a1f8be87c4d0 .
+
+km-dev:PredicateObjectMap_47aa1bcd-941e-4412-b509-a1f8be87c4d0 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_47aa1bcd-941e-4412-b509-a1f8be87c4d0 .
+
+km-dev:PredicateObjectMap_13d0c867-a159-4562-b8ef-b2c6a68df5c2 rr:predicate gn:parentFeature .
+
+km-dev:RefObjectMap_b709fcd3-c83a-4bcf-b409-0b08c5a86238 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_0b2b9a00-af17-4a24-937b-1bcca5733c6e ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap km-dev:RefObjectMap_b709fcd3-c83a-4bcf-b409-0b08c5a86238 .
+
+km-dev:PredicateObjectMap_13d0c867-a159-4562-b8ef-b2c6a68df5c2 rr:objectMap km-dev:RefObjectMap_b709fcd3-c83a-4bcf-b409-0b08c5a86238 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_13d0c867-a159-4562-b8ef-b2c6a68df5c2 .
+
+km-dev:PredicateObjectMap_13d0c867-a159-4562-b8ef-b2c6a68df5c2 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_13d0c867-a159-4562-b8ef-b2c6a68df5c2 .
+
+km-dev:PredicateObjectMap_2f7996de-9d47-4295-9389-fd8ba88ded57 rr:predicate gn:parentADM4 .
+
+km-dev:RefObjectMap_51eeeaff-e92c-4056-b859-1d1f6a37e492 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_37e315b5-3001-4b9c-85ac-7b904e3f9ae5 ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap km-dev:RefObjectMap_51eeeaff-e92c-4056-b859-1d1f6a37e492 .
+
+km-dev:PredicateObjectMap_2f7996de-9d47-4295-9389-fd8ba88ded57 rr:objectMap km-dev:RefObjectMap_51eeeaff-e92c-4056-b859-1d1f6a37e492 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_2f7996de-9d47-4295-9389-fd8ba88ded57 .
+
+km-dev:PredicateObjectMap_2f7996de-9d47-4295-9389-fd8ba88ded57 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2f7996de-9d47-4295-9389-fd8ba88ded57 .
+
+km-dev:PredicateObjectMap_0589ce72-f21e-4629-be96-ca07eeaf548d rr:predicate gn:parentADM3 .
+
+km-dev:RefObjectMap_73643785-ef79-4490-85e1-aef35f125b85 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_63a9a741-a7ef-4800-a2bd-37a15c766ed5 ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap km-dev:RefObjectMap_73643785-ef79-4490-85e1-aef35f125b85 .
+
+km-dev:PredicateObjectMap_0589ce72-f21e-4629-be96-ca07eeaf548d rr:objectMap km-dev:RefObjectMap_73643785-ef79-4490-85e1-aef35f125b85 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_0589ce72-f21e-4629-be96-ca07eeaf548d .
+
+km-dev:PredicateObjectMap_0589ce72-f21e-4629-be96-ca07eeaf548d a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0589ce72-f21e-4629-be96-ca07eeaf548d .
+
+km-dev:PredicateObjectMap_875d20e8-0715-4d27-aee0-0ebc462004bc rr:predicate gn:parentADM2 .
+
+km-dev:RefObjectMap_14178bd3-f611-4aa0-96be-52ee02550f09 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_501c2f9b-7347-4c4c-a820-4878fa0cdf5b ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap km-dev:RefObjectMap_14178bd3-f611-4aa0-96be-52ee02550f09 .
+
+km-dev:PredicateObjectMap_875d20e8-0715-4d27-aee0-0ebc462004bc rr:objectMap km-dev:RefObjectMap_14178bd3-f611-4aa0-96be-52ee02550f09 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_875d20e8-0715-4d27-aee0-0ebc462004bc .
+
+km-dev:PredicateObjectMap_875d20e8-0715-4d27-aee0-0ebc462004bc a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_875d20e8-0715-4d27-aee0-0ebc462004bc .
+
+km-dev:PredicateObjectMap_7f11fe2c-f7c9-45dd-bae2-c36d3e954677 rr:predicate gn:parentADM1 .
+
+km-dev:RefObjectMap_c2ecd327-5482-47e9-8d32-dd256763c9c6 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_7813c8ba-1e20-45a8-933e-ed3503fb2121 ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap km-dev:RefObjectMap_c2ecd327-5482-47e9-8d32-dd256763c9c6 .
+
+km-dev:PredicateObjectMap_7f11fe2c-f7c9-45dd-bae2-c36d3e954677 rr:objectMap km-dev:RefObjectMap_c2ecd327-5482-47e9-8d32-dd256763c9c6 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_7f11fe2c-f7c9-45dd-bae2-c36d3e954677 .
+
+km-dev:PredicateObjectMap_7f11fe2c-f7c9-45dd-bae2-c36d3e954677 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7f11fe2c-f7c9-45dd-bae2-c36d3e954677 .
+
+km-dev:PredicateObjectMap_a0443b9f-71f0-4513-b00a-3338d060a200 rr:predicate gn:countryCode .
+
+_:node1f0gbkf26x4 rr:column "country_code" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x4 .
+
+km-dev:PredicateObjectMap_a0443b9f-71f0-4513-b00a-3338d060a200 rr:objectMap _:node1f0gbkf26x4 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_a0443b9f-71f0-4513-b00a-3338d060a200 .
+
+km-dev:PredicateObjectMap_a0443b9f-71f0-4513-b00a-3338d060a200 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a0443b9f-71f0-4513-b00a-3338d060a200 .
+
+km-dev:PredicateObjectMap_5e47072f-f83c-49e7-927a-ff67d9bd3df3 rr:predicate gn:alternateName .
+
+_:node1f0gbkf26x5 rr:column "[\"alternames\",\"Values\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x5 .
+
+km-dev:PredicateObjectMap_5e47072f-f83c-49e7-927a-ff67d9bd3df3 rr:objectMap _:node1f0gbkf26x5 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_5e47072f-f83c-49e7-927a-ff67d9bd3df3 .
+
+km-dev:PredicateObjectMap_5e47072f-f83c-49e7-927a-ff67d9bd3df3 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5e47072f-f83c-49e7-927a-ff67d9bd3df3 .
+
+km-dev:PredicateObjectMap_a9af6558-7878-4e62-b7ff-dab5468576f6 rr:predicate gfbiots:externalID .
+
+_:node1f0gbkf26x6 rr:column "geonameid" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x6 .
+
+km-dev:PredicateObjectMap_a9af6558-7878-4e62-b7ff-dab5468576f6 rr:objectMap _:node1f0gbkf26x6 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_a9af6558-7878-4e62-b7ff-dab5468576f6 .
+
+km-dev:PredicateObjectMap_a9af6558-7878-4e62-b7ff-dab5468576f6 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a9af6558-7878-4e62-b7ff-dab5468576f6 .
+
+km-dev:PredicateObjectMap_9c783a54-0f2f-4f57-aaf5-8a6e59aff2a1 rr:predicate gn:name .
+
+_:node1f0gbkf26x7 rr:column "name" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x7 .
+
+km-dev:PredicateObjectMap_9c783a54-0f2f-4f57-aaf5-8a6e59aff2a1 rr:objectMap _:node1f0gbkf26x7 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_9c783a54-0f2f-4f57-aaf5-8a6e59aff2a1 .
+
+km-dev:PredicateObjectMap_9c783a54-0f2f-4f57-aaf5-8a6e59aff2a1 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9c783a54-0f2f-4f57-aaf5-8a6e59aff2a1 .
+
+km-dev:PredicateObjectMap_0c582944-3bac-4266-8264-623ee076c085 rr:predicate rdfs:label .
+
+_:node1f0gbkf26x8 rr:column "asciiname" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x8 .
+
+km-dev:PredicateObjectMap_0c582944-3bac-4266-8264-623ee076c085 rr:objectMap _:node1f0gbkf26x8 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_0c582944-3bac-4266-8264-623ee076c085 .
+
+km-dev:PredicateObjectMap_0c582944-3bac-4266-8264-623ee076c085 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0c582944-3bac-4266-8264-623ee076c085 .
+
+km-dev:PredicateObjectMap_602c863f-aee6-4d5e-a083-9a2d2b884f2b rr:predicate gn:population .
+
+_:node1f0gbkf26x9 rr:column "population" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x9 .
+
+km-dev:PredicateObjectMap_602c863f-aee6-4d5e-a083-9a2d2b884f2b rr:objectMap _:node1f0gbkf26x9 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_602c863f-aee6-4d5e-a083-9a2d2b884f2b .
+
+km-dev:PredicateObjectMap_602c863f-aee6-4d5e-a083-9a2d2b884f2b a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_602c863f-aee6-4d5e-a083-9a2d2b884f2b .
+
+km-dev:PredicateObjectMap_b52346d2-7396-48db-b0e9-7fcf59ed0e3f rr:predicate dct:modified .
+
+_:node1f0gbkf26x10 rr:column "modification_date" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x10 .
+
+km-dev:PredicateObjectMap_b52346d2-7396-48db-b0e9-7fcf59ed0e3f rr:objectMap _:node1f0gbkf26x10 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_b52346d2-7396-48db-b0e9-7fcf59ed0e3f .
+
+km-dev:PredicateObjectMap_b52346d2-7396-48db-b0e9-7fcf59ed0e3f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b52346d2-7396-48db-b0e9-7fcf59ed0e3f .
+
+km-dev:PredicateObjectMap_8267c93b-319f-4bbc-8b4c-112fea468271 rr:predicate <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
+
+_:node1f0gbkf26x11 rr:column "latitude" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x11 .
+
+km-dev:PredicateObjectMap_8267c93b-319f-4bbc-8b4c-112fea468271 rr:objectMap _:node1f0gbkf26x11 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_8267c93b-319f-4bbc-8b4c-112fea468271 .
+
+km-dev:PredicateObjectMap_8267c93b-319f-4bbc-8b4c-112fea468271 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_8267c93b-319f-4bbc-8b4c-112fea468271 .
+
+km-dev:PredicateObjectMap_494dc238-9549-4945-87d6-a192982b2392 rr:predicate <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
+
+_:node1f0gbkf26x12 rr:column "longitude" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x12 .
+
+km-dev:PredicateObjectMap_494dc238-9549-4945-87d6-a192982b2392 rr:objectMap _:node1f0gbkf26x12 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_494dc238-9549-4945-87d6-a192982b2392 .
+
+km-dev:PredicateObjectMap_494dc238-9549-4945-87d6-a192982b2392 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_494dc238-9549-4945-87d6-a192982b2392 .
+
+km-dev:PredicateObjectMap_7a642da7-8c5d-4e96-b983-a9cffdf56202 rr:predicate gfbiots:rank .
+
+_:node1f0gbkf26x13 rr:column "feature_code" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasObjectMap _:node1f0gbkf26x13 .
+
+km-dev:PredicateObjectMap_7a642da7-8c5d-4e96-b983-a9cffdf56202 rr:objectMap _:node1f0gbkf26x13 .
+
+km-dev:TriplesMap_c25849eb-5673-4d51-b210-f2cb532c5977 rr:predicateObjectMap km-dev:PredicateObjectMap_7a642da7-8c5d-4e96-b983-a9cffdf56202 .
+
+km-dev:PredicateObjectMap_7a642da7-8c5d-4e96-b983-a9cffdf56202 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_7a642da7-8c5d-4e96-b983-a9cffdf56202 .
+
+km-dev:TriplesMap_1ff6a234-6bc4-43e2-b0e7-098b7f353bcb a rr:TriplesMap .
+
+_:node1f0gbkf26x1 km-dev:hasTriplesMap km-dev:TriplesMap_1ff6a234-6bc4-43e2-b0e7-098b7f353bcb .
+
+km-dev:TriplesMap_1ff6a234-6bc4-43e2-b0e7-098b7f353bcb km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x14 rr:tableName "DE_mod_final.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasLogicalTable _:node1f0gbkf26x14 .
+
+km-dev:TriplesMap_1ff6a234-6bc4-43e2-b0e7-098b7f353bcb rr:logicalTable _:node1f0gbkf26x14 ;
+	rr:subjectMap _:node1f0gbkf26x15 .
+
+_:node1f0gbkf26x1 km-dev:hasSubjectMap _:node1f0gbkf26x15 .
+
+_:node1f0gbkf26x15 km-dev:isPartOfMapping _:node1f0gbkf26x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.geonames.org/ontology#Class1" ;
+	rr:class gn:Class ;
+	rr:template "{feature_class_uri}" .
+
+km-dev:TriplesMap_dd669b99-65a1-445c-893c-9513657c47e7 a rr:TriplesMap .
+
+_:node1f0gbkf26x1 km-dev:hasTriplesMap km-dev:TriplesMap_dd669b99-65a1-445c-893c-9513657c47e7 .
+
+km-dev:TriplesMap_dd669b99-65a1-445c-893c-9513657c47e7 km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x16 rr:tableName "DE_mod_final.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasLogicalTable _:node1f0gbkf26x16 .
+
+km-dev:TriplesMap_dd669b99-65a1-445c-893c-9513657c47e7 rr:logicalTable _:node1f0gbkf26x16 ;
+	rr:subjectMap _:node1f0gbkf26x17 .
+
+_:node1f0gbkf26x1 km-dev:hasSubjectMap _:node1f0gbkf26x17 .
+
+_:node1f0gbkf26x17 km-dev:isPartOfMapping _:node1f0gbkf26x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.geonames.org/ontology#Code1" ;
+	rr:class gn:Code ;
+	rr:template "{feature_code_uri}" .
+
+km-dev:TriplesMap_0b2b9a00-af17-4a24-937b-1bcca5733c6e a rr:TriplesMap .
+
+_:node1f0gbkf26x1 km-dev:hasTriplesMap km-dev:TriplesMap_0b2b9a00-af17-4a24-937b-1bcca5733c6e .
+
+km-dev:TriplesMap_0b2b9a00-af17-4a24-937b-1bcca5733c6e km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x18 rr:tableName "DE_mod_final.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasLogicalTable _:node1f0gbkf26x18 .
+
+km-dev:TriplesMap_0b2b9a00-af17-4a24-937b-1bcca5733c6e rr:logicalTable _:node1f0gbkf26x18 ;
+	rr:subjectMap _:node1f0gbkf26x19 .
+
+_:node1f0gbkf26x1 km-dev:hasSubjectMap _:node1f0gbkf26x19 .
+
+_:node1f0gbkf26x19 km-dev:isPartOfMapping _:node1f0gbkf26x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.geonames.org/ontology#Feature2" ;
+	rr:class gn:Feature ;
+	rr:template "http://sws.geonames.org/{parent}/" .
+
+km-dev:TriplesMap_37e315b5-3001-4b9c-85ac-7b904e3f9ae5 a rr:TriplesMap .
+
+_:node1f0gbkf26x1 km-dev:hasTriplesMap km-dev:TriplesMap_37e315b5-3001-4b9c-85ac-7b904e3f9ae5 .
+
+km-dev:TriplesMap_37e315b5-3001-4b9c-85ac-7b904e3f9ae5 km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x20 rr:tableName "DE_mod_final.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasLogicalTable _:node1f0gbkf26x20 .
+
+km-dev:TriplesMap_37e315b5-3001-4b9c-85ac-7b904e3f9ae5 rr:logicalTable _:node1f0gbkf26x20 ;
+	rr:subjectMap _:node1f0gbkf26x21 .
+
+_:node1f0gbkf26x1 km-dev:hasSubjectMap _:node1f0gbkf26x21 .
+
+_:node1f0gbkf26x21 km-dev:isPartOfMapping _:node1f0gbkf26x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.geonames.org/ontology#Feature3" ;
+	rr:class gn:Feature ;
+	rr:template "http://sws.geonames.org/{adm4_feature}/" .
+
+km-dev:TriplesMap_63a9a741-a7ef-4800-a2bd-37a15c766ed5 a rr:TriplesMap .
+
+_:node1f0gbkf26x1 km-dev:hasTriplesMap km-dev:TriplesMap_63a9a741-a7ef-4800-a2bd-37a15c766ed5 .
+
+km-dev:TriplesMap_63a9a741-a7ef-4800-a2bd-37a15c766ed5 km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x22 rr:tableName "DE_mod_final.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasLogicalTable _:node1f0gbkf26x22 .
+
+km-dev:TriplesMap_63a9a741-a7ef-4800-a2bd-37a15c766ed5 rr:logicalTable _:node1f0gbkf26x22 ;
+	rr:subjectMap _:node1f0gbkf26x23 .
+
+_:node1f0gbkf26x1 km-dev:hasSubjectMap _:node1f0gbkf26x23 .
+
+_:node1f0gbkf26x23 km-dev:isPartOfMapping _:node1f0gbkf26x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.geonames.org/ontology#Feature4" ;
+	rr:class gn:Feature ;
+	rr:template "http://sws.geonames.org/{adm3_feature}/" .
+
+km-dev:TriplesMap_501c2f9b-7347-4c4c-a820-4878fa0cdf5b a rr:TriplesMap .
+
+_:node1f0gbkf26x1 km-dev:hasTriplesMap km-dev:TriplesMap_501c2f9b-7347-4c4c-a820-4878fa0cdf5b .
+
+km-dev:TriplesMap_501c2f9b-7347-4c4c-a820-4878fa0cdf5b km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x24 rr:tableName "DE_mod_final.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasLogicalTable _:node1f0gbkf26x24 .
+
+km-dev:TriplesMap_501c2f9b-7347-4c4c-a820-4878fa0cdf5b rr:logicalTable _:node1f0gbkf26x24 ;
+	rr:subjectMap _:node1f0gbkf26x25 .
+
+_:node1f0gbkf26x1 km-dev:hasSubjectMap _:node1f0gbkf26x25 .
+
+_:node1f0gbkf26x25 km-dev:isPartOfMapping _:node1f0gbkf26x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.geonames.org/ontology#Feature5" ;
+	rr:class gn:Feature ;
+	rr:template "http://sws.geonames.org/{adm2_feature}/" .
+
+km-dev:TriplesMap_7813c8ba-1e20-45a8-933e-ed3503fb2121 a rr:TriplesMap .
+
+_:node1f0gbkf26x1 km-dev:hasTriplesMap km-dev:TriplesMap_7813c8ba-1e20-45a8-933e-ed3503fb2121 .
+
+km-dev:TriplesMap_7813c8ba-1e20-45a8-933e-ed3503fb2121 km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x26 rr:tableName "DE_mod_final.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1f0gbkf26x1 .
+
+_:node1f0gbkf26x1 km-dev:hasLogicalTable _:node1f0gbkf26x26 .
+
+km-dev:TriplesMap_7813c8ba-1e20-45a8-933e-ed3503fb2121 rr:logicalTable _:node1f0gbkf26x26 ;
+	rr:subjectMap _:node1f0gbkf26x27 .
+
+_:node1f0gbkf26x1 km-dev:hasSubjectMap _:node1f0gbkf26x27 .
+
+_:node1f0gbkf26x27 km-dev:isPartOfMapping _:node1f0gbkf26x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.geonames.org/ontology#Feature6" ;
+	rr:class gn:Feature ;
+	rr:template "http://sws.geonames.org/{adm1_feature}/" .

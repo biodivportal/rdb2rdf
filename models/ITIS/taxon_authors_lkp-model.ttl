@@ -1,0 +1,282 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1ep3q5h0vx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "taxon_authors_lkp" ;
+	km-dev:modelPublicationTime "1607519618079"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"taxon_author\"}],[{\"columnName\":\"taxon_author_id\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"taxon_author\"}],[{\"columnName\":\"author_uri\"}]]" ;
+	km-dev:hasModelLabel "taxon_authors_lkp" ;
+	km-dev:hasBaseURI "http://terminologies.gfbio.org/ITIS/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"taxon_author_id\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"author_uri\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return 'http://terminologies.gfbio.org/ITIS/Author_' +  getValue(\\\"taxon_author_id\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"taxon_author_id\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"author_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": true,
+                    \"baseURI\": \"http://terminologies.gfbio.org/ITIS/\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"author_uri\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://terminologies.gfbio.org/ITIS#Author\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://terminologies.gfbio.org/ITIS#Author1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Author\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Author1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Author/Author1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"author_uri\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"author_uri\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"taxon_author\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://terminologies.gfbio.org/ITIS#Author\",
+                    \"DomainId\": \"http://terminologies.gfbio.org/ITIS#Author1\",
+                    \"isPrimary\": true,
+                    \"isProvenance\": false,
+                    \"FullType\": \"http://www.w3.org/2000/01/rdf-schema#label\",
+                    \"DomainLabel\": \"http://terminologies.gfbio.org/ITIS#Author/Author1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"taxon_author\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"taxon_author\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    }
+]""" .
+
+km-dev:TriplesMap_31a24d92-9f45-4018-92f8-a7199b01c8b2 a rr:TriplesMap .
+
+_:node1ep3q5h0vx1 km-dev:hasTriplesMap km-dev:TriplesMap_31a24d92-9f45-4018-92f8-a7199b01c8b2 .
+
+km-dev:TriplesMap_31a24d92-9f45-4018-92f8-a7199b01c8b2 km-dev:isPartOfMapping _:node1ep3q5h0vx1 .
+
+_:node1ep3q5h0vx2 rr:tableName "taxon_authors_lkp" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1ep3q5h0vx1 .
+
+_:node1ep3q5h0vx1 km-dev:hasLogicalTable _:node1ep3q5h0vx2 .
+
+km-dev:TriplesMap_31a24d92-9f45-4018-92f8-a7199b01c8b2 rr:logicalTable _:node1ep3q5h0vx2 ;
+	rr:subjectMap _:node1ep3q5h0vx3 .
+
+_:node1ep3q5h0vx1 km-dev:hasSubjectMap _:node1ep3q5h0vx3 .
+
+_:node1ep3q5h0vx3 km-dev:isPartOfMapping _:node1ep3q5h0vx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://terminologies.gfbio.org/ITIS#Author1" ;
+	rr:class <http://terminologies.gfbio.org/ITIS#Author> ;
+	rr:template "{author_uri}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_2b21ef9a-7998-4e2b-b738-de67e2a2210e rr:predicate rdfs:label .
+
+_:node1ep3q5h0vx4 rr:column "taxon_author" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1ep3q5h0vx1 .
+
+_:node1ep3q5h0vx1 km-dev:hasObjectMap _:node1ep3q5h0vx4 .
+
+km-dev:PredicateObjectMap_2b21ef9a-7998-4e2b-b738-de67e2a2210e rr:objectMap _:node1ep3q5h0vx4 .
+
+km-dev:TriplesMap_31a24d92-9f45-4018-92f8-a7199b01c8b2 rr:predicateObjectMap km-dev:PredicateObjectMap_2b21ef9a-7998-4e2b-b738-de67e2a2210e .
+
+km-dev:PredicateObjectMap_2b21ef9a-7998-4e2b-b738-de67e2a2210e a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1ep3q5h0vx1 .
+
+_:node1ep3q5h0vx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2b21ef9a-7998-4e2b-b738-de67e2a2210e .

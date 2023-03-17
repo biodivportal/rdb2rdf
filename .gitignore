@@ -1,3 +1,7 @@
+# ignore large files
+# retrieve from: https://gitlab.com/gfbio-terminology-management/rdb2rdf/-/raw/master/models/karma-offline-batch.jar?inline=false
+models/karma-offline-batch.jar
+
 # source: https://github.com/github/gitignore/blob/main/Maven.gitignore
 target/
 pom.xml.tag

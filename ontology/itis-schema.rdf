@@ -1,0 +1,248 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://terminologies.gfbio.org/ITIS#"
+     xml:base="http://terminologies.gfbio.org/ITIS"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://terminologies.gfbio.org/ITIS">
+        <rdfs:comment>ITIS RD2Onto Mapping</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#author -->
+
+    <owl:ObjectProperty rdf:about="http://terminologies.gfbio.org/ITIS#author">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://terminologies.gfbio.org/ITIS#Author"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The author(s) associated with the taxon</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has author</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#kingdom -->
+
+    <owl:ObjectProperty rdf:about="http://terminologies.gfbio.org/ITIS#kingdom">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://terminologies.gfbio.org/ITIS#Kingdom"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A unique identifier for the highest level of the taxonomic hierarchy structure</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has kingdom</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#parent -->
+
+    <owl:ObjectProperty rdf:about="http://terminologies.gfbio.org/ITIS#parent">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The direct parent TSN of hierarch</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has parent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#rank_id -->
+
+    <owl:ObjectProperty rdf:about="http://terminologies.gfbio.org/ITIS#rank_id">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://terminologies.gfbio.org/ITIS#TaxonomicRank"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A unique identifier for a specific level within the taxonomic hierarchy</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">has rank</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#accepted_name -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#accepted_name">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The unit indicators and unit name fields concatenated and trimmed to present entire scientific name, without taxon author.Designed to be helpful when searching for taxa by scientific name.</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accepted name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#common_name -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#common_name">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A common name associated with anoccurrence of Taxonomic Units</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">commonName</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#complete_name -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#complete_name">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The unit indicators and unit name fieldsconcatenated and trimmed to present entire scientific name, without taxon author.Designed to be helpful when searching for taxa by scientific name</rdfs:comment>
+        <rdfs:label>scientific name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#completeness_rating -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#completeness_rating">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rating designation reflecting whether all known, named, modern species (extant or recently extinct) for that taxonwere incorporated into ITIS at the time of review</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">completeness rating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#credibility_rtng -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#credibility_rtng">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subjective rating designation as determined by the Taxonomic Work Group reflecting the level of review and the perceived level of accuracy for an occurrence of Taxonomic Units and its associated attributes</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">credibility rating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#currency_rating -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#currency_rating">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A rating designation reflecting the year of revision/source for a group</rdfs:comment>
+        <rdfs:label>currency rating</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#initial_time_stamp -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#initial_time_stamp">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Date and time at which an occurrence of Taxonomic Units is initially loaded into the ITIS database</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">initial time stamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#name_usage -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#name_usage">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Current standing of an occurrence of a Taxonomic Unit. A duplicate of usage element.Note usage values moved to name_usage because “usage” is a SQL reserved word which sometimes causes issues with database code</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">name usage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#synonym -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#synonym">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">synonym</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#tsn -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#tsn">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Taxonomic Serial Number. The unique identifier for an occurrence of Taxonomic Units</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tsn</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#unaccept_reason -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#unaccept_reason">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The cause for an occurrence of Taxonomic Units being identified as not accepted/invalid under the usage element</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unaccept reason</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#update_date -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/ITIS#update_date">
+        <rdfs:domain rdf:resource="http://terminologies.gfbio.org/ITIS#Taxa"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The date on which a record is modified. The purpose of this element is to provide assistance to those downloading data on a periodic basis</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">update date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#Author -->
+
+    <owl:Class rdf:about="http://terminologies.gfbio.org/ITIS#Author"/>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#Kingdom -->
+
+    <owl:Class rdf:about="http://terminologies.gfbio.org/ITIS#Kingdom"/>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#Taxa -->
+
+    <owl:Class rdf:about="http://terminologies.gfbio.org/ITIS#Taxa"/>
+    
+
+
+    <!-- http://terminologies.gfbio.org/ITIS#TaxonomicRank -->
+
+    <owl:Class rdf:about="http://terminologies.gfbio.org/ITIS#TaxonomicRank"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->

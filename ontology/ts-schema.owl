@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://terminologies.gfbio.org/terms/ts-schema#"
+     xml:base="http://terminologies.gfbio.org/terms/ts-schema"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:gfbiots="http://terminologies.gfbio.org/terms/ts-schema/">
+    <owl:Ontology rdf:about="http://terminologies.gfbio.org/terms/ts-schema">
+        <dc:title>The GFBio Terminology Server Schema vocabulary</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/label -->
+
+    <owl:AnnotationProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/label">
+        <rdfs:comment>The label of the subject resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>label</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#Class -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/abbreviations -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/abbreviations">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The abbreviations of this resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>abbreviations</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/type -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/type">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Denotes the type of the terminology.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>type</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/acronym -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/acronym">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The acronym of the terminology.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>acronym</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/broaderlabel -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/broaderlabel">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The label of the term that is one level broader than the given resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>broaderlabel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/broaderuri -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/broaderuri">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The uri of the term that is one level broader than the given resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>broaderuri</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/commonNames -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/commonNames">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The common names of this resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>commonNames</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/description -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/description">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The description of the concept.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/definition -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/definition">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The official definition, explaining the meaning of a class or property.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>definition</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/embeddedDatabase -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/embeddedDatabase">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The database this external service gets it&apos;s information from.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>embeddedDatabase</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/externalID -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/externalID">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The external ID of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>externalID</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/hierarchy -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/hierarchy">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The hierarchical path to the top level for the given resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>hierarchy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/kingdom -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/kingdom">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The kingdom of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>kingdom</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/name -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/name">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The name of the terminology.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/narrowerlabel -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/narrowerlabel">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The label of the term that is one level narrower than the given resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>narrowerlabel</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/narroweruri -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/narroweruri">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The uri of the term that is one level narrower than the given resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>narroweruri</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/rank -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/rank">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The taxonomic rank of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>rank</rdfs:label>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/author -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/author">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The author of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>author</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/sourceTerminology -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/sourceTerminology">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The source terminology where the subject resource comes from.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>sourceTerminology</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/status -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/status">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The status of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/symbols -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/symbols">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The symbols of this resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>symbols</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/synonym -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/synonym">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The synonym(s) of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>synonym</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/uri -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/uri">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The URI of the subject concept.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>uri</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/url -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/url">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>The URL of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>url</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- http://terminologies.gfbio.org/terms/ts-schema/internal -->
+
+    <owl:DatatypeProperty rdf:about="http://terminologies.gfbio.org/terms/ts-schema/internal">
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment>Indicates whether a terminology is an internal resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://terminologies.gfbio.org/terms/ts-schema/"/>
+        <rdfs:label>internal</rdfs:label>
+    </owl:DatatypeProperty>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
