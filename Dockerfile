@@ -1,4 +1,4 @@
-FROM mysql:latest
+FROM mysql:debian
 
 COPY ./sql /itis
 
