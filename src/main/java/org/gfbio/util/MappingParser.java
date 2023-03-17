@@ -18,7 +18,7 @@ public class MappingParser {
 
   /**
    * This parses and returns only the keys of the JsonElements inside the array.
-   * 
+   *
    * @return
    */
   public static List<String> getKeys(String json, String jsonArrayName) {
@@ -37,7 +37,7 @@ public class MappingParser {
 
   /**
    * This parses and returns keys and values of the JsonElements inside the array.
-   * 
+   *
    * @return
    */
   public static Map<String, String> getKeysValues(String json, String jsonArrayName) {
@@ -57,9 +57,10 @@ public class MappingParser {
   }
 
   /**
-   * Parse a valid mappingConfig.json to retrieve codified information about tables and their
+   * Parse a valid mappingConfig.json to retrieve codified information about
+   * tables and their
    * respective columns.
-   * 
+   *
    * @param json
    * @param jsonArrayName
    */
@@ -69,13 +70,12 @@ public class MappingParser {
 
     Iterator<Entry<String, JsonElement>> iter = null;
 
-    JsonParser parser = new JsonParser();
-
-    JsonElement jsonTree = parser.parse(json);
+    JsonElement jsonTree = JsonParser.parseString(json);
 
     // traverse tree
     //
-    // We look for, e.g., "kingdoms": [ { "kingdom_id": "int", "kingdom_name": "kingdoms" } ],
+    // We look for, e.g., "kingdoms": [ { "kingdom_id": "int", "kingdom_name":
+    // "kingdoms" } ],
     // which is an object, which itself contains an array which holds column names
 
     if (jsonTree.isJsonObject()) {
