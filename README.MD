@@ -1,52 +1,30 @@
+Command line for transforming a relational database dump into an ontology. CSV files or database tables are transformed into RDF triples using a mapping created in advance using the Karma Data Integration tool. This repository contains transformation Pipeline Wrappers has been implemented for ITIS (https://www.itis.gov/) and Geonames (http://www.geonames.org/).
+
 # Wie mappe ich eine relationale Datenbank auf eine Ontologie/Terminologie?
 
-## Tools
+## Requirements
 
 - [Karma](https://github.com/usc-isi-i2/Web-Karma)
-- MySQL oder PostgreSQL Datenbank (dafür wird ein [Treiber](https://github.com/usc-isi-i2/Web-Karma/issues/362) benötigt)
-- Docker
+- MySQL oder PostgreSQL Database (a [JDBC driver] (https://github.com/usc-isi-i2/Web-Karma/issues/362) is needed)
+- Docker/Docker-Compose >= 2.2.3
+- JDK >= 11
+- Maven >= 3.6.3
+- >= 16 GB RAM
 
 ## Ablauf
 
 ### ITIS
 
-_Es ist zu beachten, dass die Datenbank-Dumps des Vormonats meist am Anfang des neuen Monats online gestellt werden; diese überschreiben die alten Dumps, d.h. es kann immer nur der aktuelle Dump ausgelesen werden_
-
-1. Schema-Mapping-File in Protégé erstellen
-2. Karma installieren/herunterladen und starten:
-   - Bspw. <https://github.com/usc-isi-i2/Web-Karma> klonen
-   - In Unterordner karma-web wechseln und `mvn -Djetty.port=9999 jetty:run`
-3. Mapping-File in Karma hochladen (als Ontology)
-4. Datenquellen importieren:
-   - Datenbank-Tabellen laden (`Import -> Database Table`):`taxonomic_units`, `taxon_unit_types`, `vernaculars`, `kingdoms`, `synonym_links`, `synonyms_tsn_label`, `synonyms_tsn_label_accepted`, `taxon_authors_lkp`
-5. Wenn bereits Karma-Models vorhanden sind sollten diese nun für ihre entsprechende Tabelle hochgeladen werden:
-   - `Apply R2RML Model -> From File` (bei erfolgreicher Anwendung erscheint eine Meldung `Model successfully applied`)
-6. Wenn kein(e) Model(s) vorhanden sind, damit starten die `Base URI` anzuanpassen, z.B. `http://terminologies.gfbio.org/ITIS/`
-7. Daten mit Mapping verbinden:
-   - Spalte `tsn` als URI formatieren (`PyTransform` -> `<http://terminologies.gfbio.org/ITIS/Taxa_xx>`) und als `uri` per `Semantic Type` setzen
-   - `complete_name`:`label`
-   - usw. usf.
-   - auch `parent_tsn` als URI wie oben zusammensetzen
-   - für komplexe Properties: `Add Incoming/Outgoing Link`
-8. `Publish -> Model -> Replace Existing Data -> Create new Context`, anschließend das Model herunterladen
-9. Nachbearbeitung: Setze '/Taxa\_' noch als 'rdfs:subClassOf' und den richtigen Type ('owl:Class')
-   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> ; <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://terminologies.gfbio.org/ITIS#Taxa> .
-   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> # für Taxa
-   <https://terminologies.gfbio.org/ITIS#parent> -> <http://www.w3.org/2000/01/rdf-schema#subClassOf>
-   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> ; <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://terminologies.gfbio.org/ITIS#TaxonomicRank> .
-   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> ; <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://terminologies.gfbio.org/ITIS#Kingdom>
-   <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> ; <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://terminologies.gfbio.org/ITIS#Author>
-
-10. `start_ITISDB.sh` ausführen. Dies baut den Container für die ITIS MySQL-Datenbank und initialisiert alle benötigten Skripte und Views. Die Installation ist abgeschlossen, wenn auf der Kommandozeile folgende Zeile erscheint:
-    `/usr/sbin/mysqld: ready for connections. Version: '8.0.29'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.`
-
-Über die `rdb2rdf-x.x.jar` kann der Prozess der Umwandlung nun angestossen werden.
+- ITIS database dumps of the previous month are put online at the beginning of a new month at https://www.itis.gov/downloads/index.html; these overwrite the old dumps, i.e. only the current dump can be retrieved
+2. Data to be processed need to be obtained, a Docker image is provided which downloads the latest database dump and deploys it to a MySQL database, also installing additional scripts and views needed for the transformation
+2. Using the aforementioned Karma tool, a mapping about how relational data should be mapped to semantic data should be created. For ITIS mappings were already created and are provided in the GitLab repository (see above) under /models/ITIS
+3. After creating the required models the rdb2rdf tool can be used to begin the actual transformation. It connects itself to Karma using a karma-offline.jar, which acts as a bridge between models, the database, and the semantic output data.
+4. For every model supplied all data of its referencing table will be exported to JSON first; afterwards, when the data collecting has finished, the actual triples (.ttl) will be created, using the JSON files as input for the transformation process provided by Karma.
+    Finally, all triple files will be merged into one final .ttl (by using the org.apache.jena package)
 
 ### GEONAMES
 
-## Aufbau
-
-Der prinzipielle Aufbau eines Konzepts aus GEONAMES kann dem folgenden Listing entnommen werden:
+The basic structure of a concept from GEONAMES is as follows:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -84,17 +62,11 @@ Der prinzipielle Aufbau eines Konzepts aus GEONAMES kann dem folgenden Listing e
 </rdf:RDF>
 ```
 
-Obwohl durch den Dump die Felder `admin1_code` bis `admin4_code` bereitgestellt werden (aber nicht immer), können daraus NICHT die Werte für die Properties `gn:parentADM1` bis `gn:parentADM4` abgeleitet werden. Diese Properties bezeichnen quasi die zugehörige Hierarchie, z.B. Ort-Landkreis-Bundesland-Staat.
-
-[GEONAMES codes](https://www.geonames.org/export/codes.html)
-
-## Ablauf
-
-- Geonames Dumps sind unter [dumps](http://download.geonames.org/export/dump/) herunterladbar
-  - pro Land stehen die benötigten Dateien als `.zip` zur Verfügung, z.B. `DE.zip`
-  - Dieses Archiv enthält eine `readme.txt` und eine `DE.txt`, letztere ist der eigentliche "Dump"
-  - Dumps werden quasi jeden Tag aktualisiert
-- Um den Dump zu mappen müssen folgende Pre-Processing Schritte vollzogen werden:
-  1. Umwandlung der rohen Daten (aus `.txt`) in eine CSV-Datei. Dies geschieht per Java.
-  2. Vervollständigen der Hierarchie in der CSV. Dies kann u.U. 2h in Anspruch nehmen.
-  3. Sollte das Java-Programm abbrechen und einen Python-bezogenen Fehler anzeigen muss das Preprocessing-Skript manuell auf der Kommandozeile ausgeführt werden, z.B. `python3 /var/opt/ts/buildGEONAMESHierarchy.py /var/opt/ts/ontologies/GEONAMES/DE.csv DE /var/opt/ts/ontologies/GEONAMES/`
+- Geonames dumps are downloadable at: http://download.geonames.org/export/dump/
+  - per country the required files are available as `.zip`, e.g. `DE.zip`.
+  - This archive contains a `readme.txt` and a `DE.txt`, the latter is the actual "dump".
+  - Dumps are updated almost every day
+- To map the dump the following pre-processing steps have to be done:
+  1. conversion of the raw data (from `.txt`) into a CSV file. This is done by Java.
+  2. complete the hierarchy in the CSV. This can take up to 2 hours.
+  3. if the Java program aborts and gives a Python-related error, the preprocessing script must be executed manually on the command line, e.g. `python3 /var/opt/ts/buildGEONAMESHierarchy.py /var/opt/ts/ontologies/GEONAMES/DE.csv DE /var/opt/ts/ontologies/GEONAMES/`.
