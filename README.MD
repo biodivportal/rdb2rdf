@@ -13,7 +13,7 @@ This repository contains transformation Pipeline Wrappers has been implemented f
 
 ### ITIS
 
-ITIS database dumps of the previous month are available [online](https://www.itis.gov/downloads/index.html) at the beginning of a new month; these overwrite the old dumps, i.e. only the current dump can be retrieved
+ITIS database dumps of the previous month are available [online](https://www.itis.gov/downloads/index.html) at the beginning of a new month; these overwrite the old dumps, i.e. only the current dump can be retrieved.
 1. Data to be processed need to be obtained, a Docker image is provided which downloads the latest database dump and deploys it to a MySQL database, also installing additional scripts and views needed for the transformation
 2. Using the aforementioned Karma tool, a mapping about how relational data should be mapped to semantic data should be created. For ITIS mappings were already created and are provided in the GitLab repository (see above) under /models/ITIS
 3. After creating the required models the rdb2rdf tool can be used to begin the actual transformation. It connects itself to Karma using a karma-offline.jar, which acts as a bridge between models, the database, and the semantic output data.
@@ -60,11 +60,13 @@ The basic structure of a concept from GEONAMES is as follows:
 </rdf:RDF>
 ```
 
-Geonames dumps are downloadable [online]{http://download.geonames.org/export/dump/}
+Geonames dumps are downloadable [here](http://download.geonames.org/export/dump/).
   - per country the required files are available as `.zip`, e.g. `DE.zip`.
   - This archive contains a `readme.txt` and a `DE.txt`, the latter is the actual "dump".
   - Dumps are updated almost every day
-To map the dump the following pre-processing steps have to be done:
-  1. conversion of the raw data (from `.txt`) into a CSV file. This is done by Java.
+  
+In order to map the dump the following pre-processing steps have to be done:
+
+  1. conversion of the raw data (from `.txt`) into a CSV file.
   2. complete the hierarchy in the CSV. This can take up to 2 hours.
   3. if the Java program aborts and gives a Python-related error, the preprocessing script must be executed manually on the command line, e.g. `python3 /var/opt/ts/buildGEONAMESHierarchy.py /var/opt/ts/ontologies/GEONAMES/DE.csv DE /var/opt/ts/ontologies/GEONAMES/`.
