@@ -1,22 +1,20 @@
-Command line for transforming a relational database dump into an ontology. CSV files or database tables are transformed into RDF triples using a mapping created in advance using the Karma Data Integration tool. This repository contains transformation Pipeline Wrappers has been implemented for ITIS (https://www.itis.gov/) and Geonames (http://www.geonames.org/).
-
-# Wie mappe ich eine relationale Datenbank auf eine Ontologie/Terminologie?
+rdb2rdf is a tool for transforming a relational database dump into an ontology. CSV files or database tables are transformed into RDF triples using a mapping created in advance using the Karma Data Integration tool.
 
 ## Requirements
 
 - [Karma](https://github.com/usc-isi-i2/Web-Karma)
-- MySQL oder PostgreSQL Database (a [JDBC driver] (https://github.com/usc-isi-i2/Web-Karma/issues/362) is needed)
+- MySQL oder PostgreSQL Database (a [JDBC driver](https://github.com/usc-isi-i2/Web-Karma/issues/362) is needed)
 - Docker/Docker-Compose >= 2.2.3
 - JDK >= 11
 - Maven >= 3.6.3
-- >= 16 GB RAM
+- At least 16 GB RAM
 
-## Ablauf
+This repository contains transformation Pipeline Wrappers has been implemented for ITIS (https://www.itis.gov/) and Geonames (http://www.geonames.org/).
 
 ### ITIS
 
-- ITIS database dumps of the previous month are put online at the beginning of a new month at https://www.itis.gov/downloads/index.html; these overwrite the old dumps, i.e. only the current dump can be retrieved
-2. Data to be processed need to be obtained, a Docker image is provided which downloads the latest database dump and deploys it to a MySQL database, also installing additional scripts and views needed for the transformation
+ITIS database dumps of the previous month are available [online](https://www.itis.gov/downloads/index.html) at the beginning of a new month; these overwrite the old dumps, i.e. only the current dump can be retrieved
+1. Data to be processed need to be obtained, a Docker image is provided which downloads the latest database dump and deploys it to a MySQL database, also installing additional scripts and views needed for the transformation
 2. Using the aforementioned Karma tool, a mapping about how relational data should be mapped to semantic data should be created. For ITIS mappings were already created and are provided in the GitLab repository (see above) under /models/ITIS
 3. After creating the required models the rdb2rdf tool can be used to begin the actual transformation. It connects itself to Karma using a karma-offline.jar, which acts as a bridge between models, the database, and the semantic output data.
 4. For every model supplied all data of its referencing table will be exported to JSON first; afterwards, when the data collecting has finished, the actual triples (.ttl) will be created, using the JSON files as input for the transformation process provided by Karma.
@@ -62,11 +60,11 @@ The basic structure of a concept from GEONAMES is as follows:
 </rdf:RDF>
 ```
 
-- Geonames dumps are downloadable at: http://download.geonames.org/export/dump/
+Geonames dumps are downloadable [online]{http://download.geonames.org/export/dump/}
   - per country the required files are available as `.zip`, e.g. `DE.zip`.
   - This archive contains a `readme.txt` and a `DE.txt`, the latter is the actual "dump".
   - Dumps are updated almost every day
-- To map the dump the following pre-processing steps have to be done:
+To map the dump the following pre-processing steps have to be done:
   1. conversion of the raw data (from `.txt`) into a CSV file. This is done by Java.
   2. complete the hierarchy in the CSV. This can take up to 2 hours.
   3. if the Java program aborts and gives a Python-related error, the preprocessing script must be executed manually on the command line, e.g. `python3 /var/opt/ts/buildGEONAMESHierarchy.py /var/opt/ts/ontologies/GEONAMES/DE.csv DE /var/opt/ts/ontologies/GEONAMES/`.
