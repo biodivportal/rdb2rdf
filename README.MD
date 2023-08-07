@@ -1,4 +1,4 @@
-rdb2rdf is a tool for transforming a relational database dump into an ontology. CSV files or database tables are transformed into RDF triples using a mapping created in advance using the Karma Data Integration tool.
+RDB2RDF is a tool for transforming a relational database dump into an ontology. CSV files or database tables are transformed into RDF triples using a mapping created in advance using the Karma Data Integration tool.
 
 ## Requirements
 
