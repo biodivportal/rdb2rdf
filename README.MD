@@ -14,7 +14,7 @@ This repository contains transformation Pipeline Wrappers for ITIS (https://www.
 ### ITIS
 
 ITIS database dumps of the previous month are available [online](https://www.itis.gov/downloads/index.html) at the beginning of a new month; these overwrite the old dumps, i.e. only the current dump can be retrieved.
-1. Data to be processed need to be obtained, a Docker image is provided which downloads the latest database dump and deploys it to a MySQL database, also installing additional scripts and views needed for the transformation
+1. A Docker image is provided which downloads the latest database dump and deploys it to a MySQL database, also installing additional scripts and views needed for the transformation
 2. Using the aforementioned Karma tool, a mapping about how relational data should be mapped to semantic data should be created. For ITIS mappings were already created and are provided in the GitLab repository (see above) under /models/ITIS
 3. After creating the required models the rdb2rdf tool can be used to begin the actual transformation. It connects itself to Karma using a karma-offline.jar, which acts as a bridge between models, the database, and the semantic output data.
 4. For every model supplied all data of its referencing table will be exported to JSON first; afterwards, when the data collecting has finished, the actual triples (.ttl) will be created, using the JSON files as input for the transformation process provided by Karma.
