@@ -9,7 +9,7 @@ RDB2RDF is a tool for transforming a relational database dump into an ontology. 
 - Maven >= 3.6.3
 - At least 16 GB RAM
 
-This repository contains transformation Pipeline Wrappers has been implemented for ITIS (https://www.itis.gov/) and Geonames (http://www.geonames.org/).
+This repository contains transformation Pipeline Wrappers for ITIS (https://www.itis.gov/) and Geonames (http://www.geonames.org/).
 
 ### ITIS
 
